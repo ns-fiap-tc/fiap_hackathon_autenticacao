@@ -19,3 +19,10 @@ data "kubernetes_service" "service-ms-processamento" {
     namespace = "default"
   }
 }
+
+data "kubernetes_service" "service-ms-notificacao" {
+  metadata {
+    name      = "service-ms-notificacao"
+    namespace = "default"
+  }
+}
