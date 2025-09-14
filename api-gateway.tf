@@ -66,7 +66,7 @@ resource "aws_apigatewayv2_route" "upload_route" {
 
   # Captura qualquer requisição que comece com /upload/
   # Ex: /upload, /upload/123, /upload/123/reviews
-  route_key = "ANY /upload/{proxy+}"
+  route_key = "ANY /servico-upload/{proxy+}"
 
   authorization_type = "JWT"
   authorizer_id      = aws_apigatewayv2_authorizer.jwt_authorizer.id
@@ -80,7 +80,7 @@ resource "aws_apigatewayv2_route" "processamento_route" {
   api_id = aws_apigatewayv2_api.http_api.id
 
   # Captura qualquer requisição que comece com /processamento/
-  route_key = "ANY /processamento/{proxy+}"
+  route_key = "ANY /servico-processamento/{proxy+}"
 
   authorization_type = "JWT"
   authorizer_id      = aws_apigatewayv2_authorizer.jwt_authorizer.id
@@ -94,7 +94,7 @@ resource "aws_apigatewayv2_route" "notificacao_route" {
   api_id = aws_apigatewayv2_api.http_api.id
 
   # Captura qualquer requisição que comece com /notificacao/
-  route_key = "ANY /notificacao/{proxy+}"
+  route_key = "ANY /servico-notificacao/{proxy+}"
 
   authorization_type = "JWT"
   authorizer_id      = aws_apigatewayv2_authorizer.jwt_authorizer.id
