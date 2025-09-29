@@ -20,5 +20,5 @@ variable "usuario_padrao" {
 variable "senha_usuario_padrao" {
   description = "Nome do usuário padrão ao criar o pool."
   type        = string
-  default     = "12345678"
+  default     = "Admin123!"
 }
