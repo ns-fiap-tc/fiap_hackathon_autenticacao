@@ -47,6 +47,7 @@ resource "null_resource" "create_temp_user" {
   provisioner "local-exec" {
     command = <<EOT
       aws cognito-idp admin-create-user \
+      --region "${var.aws_region}" \
       --user-pool-id "${aws_cognito_user_pool.user_pool.id}" \
       --username "${var.usuario_padrao}" \
       --user-attributes Name="email",Value="admin@seuprojeto.com" \
@@ -67,6 +68,7 @@ resource "null_resource" "set_user_password_permanent" {
   provisioner "local-exec" {
     command = <<EOT
       aws cognito-idp admin-set-user-password \
+      --region "${var.aws_region}" \
       --user-pool-id "${aws_cognito_user_pool.user_pool.id}" \
       --username "${var.usuario_padrao}" \
       --password "${var.senha_usuario_padrao}" \
